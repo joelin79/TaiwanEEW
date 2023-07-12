@@ -1,0 +1,71 @@
+// Terms of Use
+"term-title-string" = "免責聲明";
+"term1-string" = "【地震無法預測】，任何資訊均以中央氣象局(CWB)發布之內容為準。";
+"term2-string" = "強震即時警報是利用少數幾個地震測站快速演算之結果，與最終地震報告可能存有若干差異，請理解並謹慎使用。";
+"term3-string" = "測報可能誤報，請勿散播資訊，保持公共秩序，避免觸法。";
+"term4-string" = "若您開始使用本軟體，表示您已同意以上條款。";
+"dismiss-string" = "開始使用";
+
+// Alert Page
+"alert-title-string" = "地震速報監測";
+"%@ publish-string" = "%@ 發表";
+"est-arrival-time-string" = "預計抵達時間";
+
+// History Rage
+"history-title-string" = "測報歷史紀錄";
+
+// Settings Page
+"alerts-pref-string" = "警報設定";
+"location-pref-string" = "警報位置";
+"history-pref-string" = " 歷史設定";
+"history-time-range-string" = "歷史記錄顯示";
+"notify-pref-string" = "通知設定";
+"notify-threshold-string" = "警報";
+
+// Status
+"loading-string" = "載入中...";
+"alert-status-1-string" = "目前無發布地震資訊";
+"alert-status-2-string" = "地 震 通 報 發 表 中";
+"alert-status-3-string" = "緊 急 地 震 速 報";
+
+// Intensity Block
+"intensity-string" = "預估級數";
+"intensity-sub-string" = "級";
+
+// Time Block
+"arrival-string" = "抵達";
+"seconds-string" = "秒";
+
+// Event Info Block
+"est-intensity-string" = "預測級數";
+"time-string" = "發生時間";
+"est-countdown-string" = "預測倒數";
+
+// Active Status Indicator
+"active-string" = "新警報";
+
+// Locations
+"taipei-string" = "台北市";
+"hsinchu-string" = "新竹市";
+"taichung-string" = "台中市";
+"kaohsiung-string" = "高雄市";
+"pingtung-string" = "屏東縣";
+"taitung-string" = "台東縣";
+"hualian-string" = "花蓮縣";
+"yilan-string" = "宜蘭縣";
+
+// TimeRange
+"week-string" = "7 天";
+"twoweek-string" = "2 週";
+"month-string" = "1 月";
+"sixmonth-string" = "6 月";
+"year-string" = "1 年";
+"all-string" = "全部";
+
+// NotifyThreshold
+"off-string" = "關閉";
+"eg0-string" = "震度0以上";
+"eg1-string" = "震度1以上";
+"eg2-string" = "震度2以上";
+"eg3-string" = "震度3以上";
+"eg4-string" = "震度4以上";

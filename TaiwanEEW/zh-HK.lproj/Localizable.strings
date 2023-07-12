@@ -1,0 +1,59 @@
+// Alert Page
+
+"alert-title-string" = "Earthquake Watch";
+//"地震緊急速報"
+"%@ publish-string" = "%@ Last Published";
+"est-arrival-time-string" = "Est. Arrival";
+//"預計抵達時間"
+
+
+// History Rage
+"history-title-string" = "Alert History";
+
+// Settings Page
+"alerts-pref-string" = "Alerts Settings";
+"location-pref-string" = "Location Settings";
+"history-pref-string" = " History Settings";
+
+"history-time-range-string" = "History Time Range";
+"settings-string" = "Settings";
+
+//
+"loading-string" = "loading...";
+"alert-status-1-string" = "No Alerts Issued";
+"alert-status-2-string" = "Earthquake Warning";
+"alert-status-3-string" = "Earthquake Alert";
+//"緊 急 地 震 速 報"
+//"地 震 通 報 發 表 中"
+//"目前無發布地震資訊"
+
+// Intensity Block
+"intensity-string" = "Intensity";
+"intensity-sub-string" = "";
+//"級"
+
+// Time Block
+"arrival-string" = "Arrival";
+//"抵達"
+"seconds-string" = "sec";
+
+
+// Event Info Block
+"est-intensity-string" = "Est. Intensity";
+"time-string" = "Time";
+"est-countdown-string" = "Est. Countdown";
+
+// Locations
+"taipei-string" = "Taipei";
+"hsinchu-string" = "Hsinchu";
+"taichung-string" = "Taichung";
+"kaohsiung-string" = "Kaohsiung";
+"pingtung-string" = "Pingtung";
+"taitung-string" = "Taitung";
+"hualian-string" = "Hualian";
+"yilan-sttring" = "Yilan";
+
+
+// Active Status Indicator
+"active-string" = "New Alerts";
+
