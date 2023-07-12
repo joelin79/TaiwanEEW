@@ -6,6 +6,13 @@
 "term4-string" = "若您開始使用本軟體，表示您已同意以上條款。";
 "dismiss-string" = "開始使用";
 
+// About
+"mechanics-title-string" = "強震即時警報原理";
+"mechanics-string" = "強震即時警報(又稱地震速報)乃是當地震發生後，中央氣象局利用靠近震央附近少數幾個地震測站所偵測到的震波，快速地推算出震央位置、深度、規模等地震資訊之技術，若當地震的 『預估規模達4.5以上且最大預估震度達3級以上』時，則會立即發佈警報。（國家級警報則需超過規模5.0且當地震度4）以目前的技術而言，在台灣島內發生的地震平均可在地震發生後20秒內對外發佈警報，盲區約為70公里，代表距離震 央70公里內的民眾都會在感覺到地震搖晃之後才收到警報，盲區外的民眾則會有數秒至十數秒的預警時間。";
+"sources-title-string" = "特別感謝／資料來源";
+"sources-string" = "「地牛 Wake Up」、中央氣象局 (CWB)";
+
+
 // Alert Page
 "alert-title-string" = "地震速報監測";
 "%@ publish-string" = "%@ 發表";
@@ -20,9 +27,17 @@
 "history-pref-string" = " 歷史設定";
 "history-time-range-string" = "歷史記錄顯示";
 "notify-pref-string" = "通知設定";
-"notify-threshold-string" = "警報";
+"notify-threshold-string" = "預警震度";
+"notify-force-string" = "4級或以上強震一律推播警報。";
 
-// Status
+"about-title-string" = "關於本程式";
+"version-string" = "版本";
+"view-official-history-string" = "查看完整速報歷史";
+"information-title-string" = "了解地震速報";
+"reminder-title-string" = "請切記：";
+"reminder-string" = "速報可能誤報，任何資訊均以中央氣象局(CWB)發布之內容為準。";
+
+// AlertStatus
 "loading-string" = "載入中...";
 "alert-status-1-string" = "目前無發布地震資訊";
 "alert-status-2-string" = "地 震 通 報 發 表 中";
@@ -64,8 +79,8 @@
 
 // NotifyThreshold
 "off-string" = "關閉";
-"eg0-string" = "震度0以上";
-"eg1-string" = "震度1以上";
-"eg2-string" = "震度2以上";
-"eg3-string" = "震度3以上";
-"eg4-string" = "震度4以上";
+"eg0-string" = "震度0(含)以上";
+"eg1-string" = "震度1(含)以上";
+"eg2-string" = "震度2(含)以上";
+"eg3-string" = "震度3(含)以上";
+"eg4-string" = "震度4(含)以上";

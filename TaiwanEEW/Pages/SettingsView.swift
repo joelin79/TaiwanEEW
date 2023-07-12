@@ -13,6 +13,7 @@ struct SettingsView: View {
     @AppStorage("locSelection") var locSelection: Location = .taipei
     @AppStorage("HRSelection") var HRSelection: TimeRange = .year
     @AppStorage("notifySelection") var notifySelection: NotifyThreshold = .eg3
+    let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
     var onHistoryRangeChanged: ((TimeRange) -> Void)?
     var onSubscribedLocChanged: ((Location) -> Void)?
     var onNotifyThresholdChanged: ((NotifyThreshold) -> Void)?
@@ -41,19 +42,8 @@ struct SettingsView: View {
                     }.onChange(of: locSelection) { value in
                         onSubscribedLocChanged?(value)
                     }
-                    // TimeRange Selection
-                    Section(header: Text("history-pref-string")){
-                        List {
-                            Picker("history-time-range-string", selection: $HRSelection){
-                                ForEach(TimeRange.allCases){ timeRange in
-                                    Text(timeRange.getDisplayName())
-                                }
-                            }
-                        }
-                    }.onChange(of: HRSelection) { value in
-                        onHistoryRangeChanged?(value)
-                    }
-                    Section(header: Text("notify-pref-string")){
+                    // Alert thres. Selection
+                    Section(header: Text("notify-pref-string"), footer: Text("notify-force-string")){
                         List {
                             Picker("notify-threshold-string", selection: $notifySelection){
                                 ForEach(NotifyThreshold.allCases){ notifyThreshold in
@@ -64,6 +54,50 @@ struct SettingsView: View {
                     }.onChange(of: notifySelection) { value in
                         onNotifyThresholdChanged?(value)
                     }
+                    
+                    // TimeRange Selection
+                    Section(header: Text("history-pref-string")){
+                        List {
+                            Picker("history-time-range-string", selection: $HRSelection){
+                                ForEach(TimeRange.allCases){ timeRange in
+                                    Text(timeRange.getDisplayName())
+                                }
+                            }
+                        }
+                        Link(destination: URL(string: "https://eew.earthquake.tw/?act=eew_list")!, label:{
+                            Text("view-official-history-string")
+                                .foregroundColor(.blue)
+                        })
+                    }.onChange(of: HRSelection) { value in
+                        onHistoryRangeChanged?(value)
+                    }
+                    
+                    Section(header: Text("about-title-string")) {
+                        HStack() {
+                            Text("version-string").frame(maxWidth: .infinity, alignment: .leading)
+                            Text(appVersion ?? "unavaliable").frame(maxWidth: .infinity, alignment: .trailing)
+                                .foregroundColor(.gray)
+                        }
+                        NavigationLink {
+                            InformationView()
+                        } label: {
+                            Text("information-title-string")
+                        }
+                        NavigationLink {
+                            TermsOfUseView()
+                        } label: {
+                            Text("term-title-string")
+                        }
+                    }
+                    
+                    VStack(alignment: .leading) {
+                        Text("reminder-title-string")
+                            .font(.headline)
+                            .padding(.bottom, 2)
+                            .foregroundColor(.red)
+                        Text("reminder-string")
+                    }
+                    
                 }.navigationBarTitle("設定 Settings")
             }
         }
@@ -72,6 +106,8 @@ struct SettingsView: View {
 
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
-        SettingsView()
+        SettingsView().environment(\.locale, Locale.init(identifier: "zh-Hant"))
+        SettingsView().environment(\.locale, Locale.init(identifier: "en"))
+        SettingsView().environment(\.locale, Locale.init(identifier: "ja"))
     }
 }

@@ -14,7 +14,7 @@ struct AlertView: View {
 //    @Binding var historyRange: TimeRange
     @Binding var subscribedLoc: Location
     @EnvironmentObject var sheetManager: SheetManager
-    
+    @Environment(\.colorScheme) var colorScheme
     var publishedTime: Date {eventManager.publishedTime}
     var arrivalTime: Date {eventManager.arrivalTime}
     var intensity: String {eventManager.intensity}
@@ -27,7 +27,14 @@ struct AlertView: View {
     
     var body: some View {
         ZStack {
-            Rectangle().foregroundColor(Color("Background"))
+            var color = (colorScheme == .dark ? Color.black : Color.white)
+            
+            Rectangle().foregroundColor(color)
+            GeometryReader { reader in
+                    color
+                    .frame(height: reader.safeAreaInsets.top, alignment: .top)
+                    .ignoresSafeArea()
+            }
             //ConnectionStatusBar()
             
             VStack(alignment: .leading){
@@ -49,7 +56,6 @@ private extension AlertView {
             
             Group {
                 Text("alert-title-string").font(.largeTitle.bold())
-                    .foregroundColor(.black)
             }.offset(x:30)
             Text("\(dateFormatter.string(from: publishedTime)) publish-string")
                 .padding(.bottom, 20.0)
@@ -89,7 +95,6 @@ struct AlertView_Previews: PreviewProvider {
         AlertView(eventManager: EventDispatcher(subscribedLoc: $testLoc), subscribedLoc: $testLoc).environment(\.locale, Locale.init(identifier: "en"))
             .environmentObject(SheetManager())
         
-        AlertView(eventManager: EventDispatcher(subscribedLoc: $testLoc), subscribedLoc: $testLoc).environment(\.locale, Locale.init(identifier: "zh-Hant"))
-            .environmentObject(SheetManager())
+        AlertView(eventManager: EventDispatcher(subscribedLoc: $testLoc), subscribedLoc: $testLoc).environment(\.colorScheme, .dark)
     }
 }

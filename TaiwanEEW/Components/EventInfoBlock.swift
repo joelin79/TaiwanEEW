@@ -9,13 +9,14 @@ import SwiftUI
 
 struct EventInfoBlock: View{
     
+    @Environment(\.colorScheme) var colorScheme
     var e: Event
     
     
     var body: some View{
         RoundedRectangle(cornerRadius: 10)
             .frame(width: UIScreen.screenWidth - UIScreen.baseLine-10, height: 100)
-            .foregroundColor(.white)
+            .foregroundColor(colorScheme == .dark ? .black : .white)
             
         // side color bar
             .overlay(
@@ -59,7 +60,7 @@ struct EventInfoBlock: View{
         
         // border
             .overlay(RoundedRectangle(cornerRadius: 10)
-                .stroke(.gray, lineWidth: 1))
+                .stroke(Color(.systemGray3), lineWidth: 1))
 
     }
 }
@@ -67,6 +68,7 @@ struct EventInfoBlock: View{
 struct EventInfoBlock_Preview: PreviewProvider{
     static var previews: some View {
         EventInfoBlock(e: Event(id: "testerS", intensity: "4", seconds: 66, eventTime: Date()))
+        EventInfoBlock(e: Event(id: "testerS", intensity: "4", seconds: 66, eventTime: Date())).environment(\.colorScheme, .dark)
     }
     
 }

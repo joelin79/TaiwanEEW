@@ -45,7 +45,6 @@ struct IntensityBlock: View {
 
 struct IntensityBlock_Previews: PreviewProvider {
     static var previews: some View {
-        IntensityBlock(intensity: "4").environment(\.locale, Locale.init(identifier: "en"))
-        IntensityBlock(intensity: "4").environment(\.locale, Locale.init(identifier: "zh-Hant"))
+        IntensityBlock(intensity: "7").environment(\.locale, Locale.init(identifier: "zh-Hant")).environment(\.colorScheme, .dark)
     }
 }

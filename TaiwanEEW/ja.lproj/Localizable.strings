@@ -6,6 +6,13 @@
 "term4-string" = "本ソフトウェアの使用を開始した場合、それは上記の条件に同意したことを意味します。";
 "dismiss-string" = "使い始める";
 
+// About
+"mechanics-title-string" = "地震速報の原理";
+"mechanics-string" = "地震速報は、地震が発生した際に、中央氣象局が震源近くのいくつかの地震観測所で検出された衝撃波を利用して、震源の位置、深さ、規模などの地震情報を迅速に計算するものです。技術では、地震の「推定規模が4.5以上、最大推定震度が3以上」になった場合、直ちに警報を発令する。 （PWSレベルの警報は規模5.0以上、震度4以上が必要） 現在の技術では、台湾島で地震が発生した場合、地震発生後平均20秒以内に警報を発令できます。震源からの距離を表す70キロメートル 70キロメートル以内にいる人は地震の揺れを感じて初めて警報が届き、不感地帯の外にいる人には数秒から数十秒の早期警戒時間が与えられる。";
+"sources-title-string" = "感謝 / 情報源";
+"sources-string" = "「地牛 Wake Up」、中央気象局 (CWB)";
+
+
 // Alert Page
 "alert-title-string" = "地震速報監視";
 "%@ publish-string" = "%@ 発表";
@@ -19,14 +26,22 @@
 "location-pref-string" = "警報位置";
 "history-pref-string" = " 履歴設定";
 "history-time-range-string" = "履歴の表示";
+"notify-pref-string" = "プッシュ通知";
+"notify-threshold-string" = "警報";
+"notify-force-string" = "震度4以上の強い地震が発生すると警報が鳴ります。";
 
-//
+"about-title-string" = "アプリ情報";
+"version-string" = "バージョン";
+"view-official-history-string" = "完全なアラート履歴を表示する";
+"information-title-string" = "速報について";
+"reminder-title-string" = "覚えておいてください：";
+"reminder-string" = "速報は間違っている可能性があります。すべての情報は中央気象局（CWB）の公表に基づいてください。";
+
+// AlertStatus
 "loading-string" = "読み込み中...";
 "alert-status-1-string" = "地震情報はありません";
 "alert-status-2-string" = "地 震 情 報";
 "alert-status-3-string" = "緊 急 地 震 速 報";
-"notify-pref-string" = "プッシュ通知";
-"notify-threshold-string" = "警報";
 
 // Intensity Block
 "intensity-string" = "推定震度";
@@ -64,8 +79,8 @@
 
 // NotifyThreshold
 "off-string" = "オフ";
-"eg0-string" = "震度0以上";
-"eg1-string" = "震度1以上";
-"eg2-string" = "震度2以上";
-"eg3-string" = "震度3以上";
-"eg4-string" = "震度4以上";
+"eg0-string" = "震度0(含)以上";
+"eg1-string" = "震度1(含)以上";
+"eg2-string" = "震度2(含)以上";
+"eg3-string" = "震度3(含)以上";
+"eg4-string" = "震度4(含)以上";

@@ -14,6 +14,8 @@
 		B40038F728743FAF0095D49F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B40038F628743FAF0095D49F /* Preview Assets.xcassets */; };
 		B442768C2878720F00B57E92 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B442768B2878720F00B57E92 /* SettingsView.swift */; };
 		C71071862A1EEAFD00C1695F /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = C71071882A1EEAFD00C1695F /* Localizable.strings */; };
+		C73B52762A5EDBDB00CC63D6 /* InformationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73B52752A5EDBDB00CC63D6 /* InformationView.swift */; };
+		C73B52782A5EDE5A00CC63D6 /* TermsOfUseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C73B52772A5EDE5A00CC63D6 /* TermsOfUseView.swift */; };
 		C7423E672A36ABA2008B1020 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7423E662A36ABA2008B1020 /* NotificationManager.swift */; };
 		C766813F299BC98B00EE9D7C /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C766813E299BC98B00EE9D7C /* HistoryView.swift */; };
 		C7668141299C942800EE9D7C /* TestText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7668140299C942700EE9D7C /* TestText.swift */; };
@@ -55,6 +57,8 @@
 		B442768B2878720F00B57E92 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
 		C71071872A1EEAFD00C1695F /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		C710718A2A1EEBC400C1695F /* zh-Hant */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = "zh-Hant"; path = "zh-Hant.lproj/Localizable.strings"; sourceTree = "<group>"; };
+		C73B52752A5EDBDB00CC63D6 /* InformationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationView.swift; sourceTree = "<group>"; };
+		C73B52772A5EDE5A00CC63D6 /* TermsOfUseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TermsOfUseView.swift; sourceTree = "<group>"; };
 		C7423E662A36ABA2008B1020 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		C766813E299BC98B00EE9D7C /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		C7668140299C942700EE9D7C /* TestText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestText.swift; sourceTree = "<group>"; };
@@ -203,6 +207,8 @@
 				B40038F128743FAB0095D49F /* AlertView.swift */,
 				C766813E299BC98B00EE9D7C /* HistoryView.swift */,
 				C7CDE7252A316CDF0032BEE0 /* FirstLaunchView.swift */,
+				C73B52752A5EDBDB00CC63D6 /* InformationView.swift */,
+				C73B52772A5EDE5A00CC63D6 /* TermsOfUseView.swift */,
 			);
 			path = Pages;
 			sourceTree = "<group>";
@@ -321,6 +327,7 @@
 				C7AEEE4129A0FDC3002471EF /* UIView.swift in Sources */,
 				C775E0D728AE637400D34920 /* TimeBlock.swift in Sources */,
 				C7CC14B72A0B8D4D00D91D56 /* TimeRange.swift in Sources */,
+				C73B52782A5EDE5A00CC63D6 /* TermsOfUseView.swift in Sources */,
 				C775E0E828AF39E900D34920 /* Event.swift in Sources */,
 				C7F83460299E4B5E006E5953 /* EventError.swift in Sources */,
 				C7F73FCA29D18E090070265F /* ActiveStatusIndicator.swift in Sources */,
@@ -338,6 +345,7 @@
 				C7953F1B29CF57E60003305B /* UIScreen.swift in Sources */,
 				B442768C2878720F00B57E92 /* SettingsView.swift in Sources */,
 				B40038F228743FAB0095D49F /* AlertView.swift in Sources */,
+				C73B52762A5EDBDB00CC63D6 /* InformationView.swift in Sources */,
 				C775E0D528AE633300D34920 /* IntensityBlock.swift in Sources */,
 				B40038F028743FAB0095D49F /* TaiwanEEWApp.swift in Sources */,
 				C7E7759B2A402B3200A71346 /* NotifyThreshold.swift in Sources */,
@@ -485,7 +493,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TaiwanEEW/TaiwanEEW.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TaiwanEEW/Preview Content\"";
 				DEVELOPMENT_TEAM = M68BL5D7KU;
 				ENABLE_PREVIEWS = YES;
@@ -498,12 +506,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joedev.TaiwanEEW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
@@ -523,7 +531,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = TaiwanEEW/TaiwanEEW.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 9;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "\"TaiwanEEW/Preview Content\"";
 				DEVELOPMENT_TEAM = M68BL5D7KU;
 				ENABLE_PREVIEWS = YES;
@@ -536,12 +544,12 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UIRequiresFullScreen = NO;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
-				IPHONEOS_DEPLOYMENT_TARGET = 16.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.joedev.TaiwanEEW;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
