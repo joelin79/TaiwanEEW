@@ -89,7 +89,7 @@ private extension AlertView {
 }
 
 struct AlertView_Previews: PreviewProvider {
-    @State static var testLoc = Location.hsinchu
+    @State static var testLoc = Location.taipei
     
     static var previews: some View {
         AlertView(eventManager: EventDispatcher(subscribedLoc: $testLoc), subscribedLoc: $testLoc).environment(\.locale, Locale.init(identifier: "en"))

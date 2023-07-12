@@ -11,13 +11,13 @@ struct LocationBlock: View {
     var subscribedLoc: Location
     var locationCH = [
         Location.taipei : LocalizedStringKey("taipei-string"),
-        Location.hsinchu : LocalizedStringKey("hsinchu-string") ,
-        Location.taichung : LocalizedStringKey("taichung-string") ,
-        Location.kaohsiung : LocalizedStringKey("kaohsiung-string") ,
-        Location.pingtung : LocalizedStringKey("pingtung-string") ,
-        Location.taitung : LocalizedStringKey("taitung-string") ,
-        Location.hualian : LocalizedStringKey("hualian-string") ,
-        Location.yilan : LocalizedStringKey("yilan-sttring") ,
+//        Location.hsinchu : LocalizedStringKey("hsinchu-string") ,
+//        Location.taichung : LocalizedStringKey("taichung-string") ,
+//        Location.kaohsiung : LocalizedStringKey("kaohsiung-string") ,
+//        Location.pingtung : LocalizedStringKey("pingtung-string") ,
+//        Location.taitung : LocalizedStringKey("taitung-string") ,
+//        Location.hualian : LocalizedStringKey("hualian-string") ,
+//        Location.yilan : LocalizedStringKey("yilan-sttring") ,
     ]
     
     var body: some View {
