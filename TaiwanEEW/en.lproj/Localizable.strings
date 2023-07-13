@@ -36,6 +36,9 @@
 "reminder-title-string" = "Reminder:";
 "reminder-string" = "Inaccuracy and false alarms possible. Any information should be based on the official announcements from the Central Weather Bureau (CWB).";
 
+// notices
+"notice1-string" = "Currently supporting Taipei City only, development in progress!";
+
 // Status
 "loading-string" = "loading...";
 "alert-status-1-string" = "No Alerts Issued";

@@ -37,6 +37,9 @@
 "reminder-title-string" = "覚えておいてください：";
 "reminder-string" = "速報は間違っている可能性があります。すべての情報は中央気象局（CWB）の公表に基づいてください。";
 
+// notices
+"notice1-string" = "台北市のみをサポートしており、開発は進行中です！";
+
 // AlertStatus
 "loading-string" = "読み込み中...";
 "alert-status-1-string" = "地震情報はありません";

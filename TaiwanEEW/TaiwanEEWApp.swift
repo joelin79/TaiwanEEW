@@ -207,9 +207,9 @@ class FCMManager {
             Messaging.messaging().subscribe(toTopic: NotifyThreshold.eg4.getTopicKey()) { error in
                 print("[FCM] Subscribed to [eg4] topic")
             }
-        case .test:
-            Messaging.messaging().subscribe(toTopic: NotifyThreshold.test.getTopicKey()) { error in
-                print("[FCM] Subscribed to [test] topic")
+        case .off:
+            Messaging.messaging().subscribe(toTopic: NotifyThreshold.off.getTopicKey()) { error in
+                print("[FCM] Subscribed to [off] topic")
             }
         }
     }

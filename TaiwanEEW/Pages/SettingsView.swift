@@ -31,7 +31,7 @@ struct SettingsView: View {
             NavigationView {
                 Form {
                     // Location Selection
-                    Section(header: Text("alerts-pref-string")){
+                    Section(header: Text("alerts-pref-string"), footer: Text("notice1-string")){
                         List {
                             Picker("location-pref-string", selection: $locSelection){
                                 ForEach(Location.allCases){ location in
@@ -107,7 +107,7 @@ struct SettingsView: View {
 struct SettingsView_Previews: PreviewProvider {
     static var previews: some View {
         SettingsView().environment(\.locale, Locale.init(identifier: "zh-Hant"))
-        SettingsView().environment(\.locale, Locale.init(identifier: "en"))
-        SettingsView().environment(\.locale, Locale.init(identifier: "ja"))
+//        SettingsView().environment(\.locale, Locale.init(identifier: "en"))
+//        SettingsView().environment(\.locale, Locale.init(identifier: "ja"))
     }
 }
