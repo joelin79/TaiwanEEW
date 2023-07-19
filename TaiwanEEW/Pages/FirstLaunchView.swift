@@ -21,13 +21,17 @@ struct FirstLaunchView: View {
     var toNumber: ((Int) -> String) = { "\($0 + 1)." }
     var bulletWidth: CGFloat? = nil
     var bulletAlignment: Alignment = .leading
-    var fontSize: CGFloat = 20
+    var fontSize: CGFloat = 18
     
     var body: some View {
         VStack {
             icon
             title
             content
+            Text("scroll-string")
+                .font(.system(size:16))
+                .foregroundColor(Color(.systemPink))
+
             close
         }
         .frame(maxWidth: .infinity, maxHeight: .infinity)
@@ -46,7 +50,7 @@ struct FirstLaunchView_Previews: PreviewProvider {
         FirstLaunchView(onDismiss: {})
             .environment(\.locale, .init(identifier: "en"))
         FirstLaunchView(onDismiss: {})
-            .environment(\.locale, .init(identifier: "jp"))
+            .environment(\.locale, .init(identifier: "ja"))
     }
 }
 
@@ -68,22 +72,23 @@ private extension FirstLaunchView {
     // MARK: https://medium.com/@yeeedward/bullet-list-with-swiftui-7dfb7e3c30f1
 
     var content: some View {
-        VStack(alignment: .leading,
-               spacing: listItemSpacing) {
-            ForEach(listItems.indices, id: \.self) { idx in
-                HStack(alignment: .top) {
-                    Text(toNumber(idx))
-                        .font(.system(size: fontSize))
-                        .frame(width: bulletWidth,
-                               alignment: bulletAlignment)
-                    Text(listItems[idx])
-                        .font(.system(size: fontSize))
-                        .frame(maxWidth: .infinity,
-                               alignment: .leading)
+        ScrollView {
+            VStack(alignment: .leading,
+                   spacing: listItemSpacing) {
+                ForEach(listItems.indices, id: \.self) { idx in
+                    HStack(alignment: .top) {
+                        Text(toNumber(idx))
+                            .font(.system(size: fontSize).bold())
+                            .frame(width: bulletWidth,
+                                   alignment: bulletAlignment)
+                        Text(listItems[idx])
+                            .font(.system(size: fontSize))
+                            .frame(maxWidth: .infinity,
+                                   alignment: .leading)
+                    }
                 }
-            }
+            }.padding(.top, 20)
         }
-               .padding(.top, 20)
     }
 
 //    var close: some View {
@@ -112,7 +117,7 @@ private extension FirstLaunchView {
                 .frame(maxWidth: .infinity)
                 .background(Color.blue)
                 .clipShape(RoundedRectangle(cornerRadius: 16, style: .continuous))
-                .padding(.top, 50)
+                .padding(.top, 20)
         }
     }
 

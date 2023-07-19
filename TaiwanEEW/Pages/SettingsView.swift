@@ -50,6 +50,7 @@ struct SettingsView: View {
                                     Text(notifyThreshold.getDisplayName())
                                 }
                             }
+//                            Text(FCMManager.currentSubscribedTopics.description)
                         }
                     }.onChange(of: notifySelection) { value in
                         onNotifyThresholdChanged?(value)

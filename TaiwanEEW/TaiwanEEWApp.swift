@@ -35,6 +35,10 @@ struct TaiwanEEWApp: App {
                         isFirstLaunch = false
                     }
                 })
+//            else if !UserDefaults.standard.bool(forKey: "HasLaunchedBefore_1.1"){
+//
+//                // Update ver 1.1 launched before flag
+//                UserDefaults.standard.set(true, forKey: "HasLaunchedBefore_1.1")
             } else {
                 TabView {
                     AlertView(eventManager: EventDispatcher(subscribedLoc: $subscribedLoc), subscribedLoc: $subscribedLoc)
@@ -51,9 +55,10 @@ struct TaiwanEEWApp: App {
                             historyRange = newValue
                         }, onSubscribedLocChanged: { newValue in
                             subscribedLoc = newValue
+                            FCMManager.setNotifyMode(location: subscribedLoc, threshold: notifyThreshold)
                         }, onNotifyThresholdChanged: { newValue in
                             notifyThreshold = newValue
-                            FCMManager.setNotifyMode(threshold: notifyThreshold)
+                            FCMManager.setNotifyMode(location: subscribedLoc, threshold: notifyThreshold)
                         })
                     .tabItem {
                         Label("Settings", systemImage: "gear")
@@ -70,6 +75,7 @@ struct TaiwanEEWApp: App {
 // MARK: https://www.youtube.com/watch?v=TGOF8MqcAzY&ab_channel=DesignCode
 // MARK: https://designcode.io/swiftui-advanced-handbook-push-notifications-part-2
 class AppDelegate: NSObject, UIApplicationDelegate {
+    @AppStorage("subscribedLoc") var subscribedLoc: Location = .taipei                  // (duplicate)
     @AppStorage("notifyThreshold") var notifyThreshold: NotifyThreshold = .eg3          // (duplicate)
     @AppStorage("isFirstLaunch") var isFirstLaunch: Bool = true                         // (duplicate)
     func seperate(){ print(); print("  -------- incoming notification --------")}       // for debugging only
@@ -79,10 +85,25 @@ class AppDelegate: NSObject, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey : Any]? = nil) -> Bool {
         FirebaseApp.configure()
         
-        if isFirstLaunch {
-            FCMManager.setNotifyMode(threshold: notifyThreshold)                    // topic subscription on first launch (default: eg3)
+        // MARK: version 1.1 adaptation
+        // Check if the app is on its first launch for version "1.1"
+        let isFirstLaunchV11 = !UserDefaults.standard.bool(forKey: "HasLaunchedBefore_1.1")
+        print("[isFirstLaunchV11] = \(isFirstLaunchV11)")
+        
+        if isFirstLaunchV11 {
+            // Unsubscribe all topics and resubscribe using new method.
+            print("--- First launch on version 1.1 ---")
+            NotifyThreshold.allCases.forEach { topic in
+                Messaging.messaging().unsubscribe(fromTopic: topic.getTopicKey()) { error in
+                    print("[FCM ver1.1 adaptation] Unsubscribed to [\(topic.getTopicKey())] topic")
+                }
+            }
+            FCMManager.setNotifyMode(location: subscribedLoc, threshold: notifyThreshold)
+            
+            // Update ver 1.1 launched before flag later in what's new page (ver 1.1)
         }
         
+
         Messaging.messaging().delegate = self
 
         if #available(iOS 10.0, *) {
@@ -172,45 +193,83 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
 
 // Topic subscription management
 class FCMManager {
-    static func setNotifyMode(threshold: NotifyThreshold) {
-        
-        NotifyThreshold.allCases.forEach { topic in
-            if topic != .eg4 {
-                Messaging.messaging().unsubscribe(fromTopic: topic.getTopicKey()) { error in
-                    print("[FCM] Unsubscribed to [\(topic.getTopicKey())] topic")
+        private static func generateTopicKeys(for location: Location, threshold: NotifyThreshold) -> [String] {
+            var topicsToSubscribe: [String] = []
+
+            switch threshold {
+            case .off:
+                topicsToSubscribe.append(threshold.getTopicKey())
+//            case .test:
+//                topicsToSubscribe.append(threshold.getTopicKey())
+            default:
+                let startIndex = threshold.getIntValue()
+                let endIndex = 4
+                let locationKey = location == .taipei ? "" : location.getTopicKey() // note taipei topics does not require location prefix.
+                for i in startIndex...endIndex {
+                    let topic = locationKey + "eg\(i)"
+                    topicsToSubscribe.append(topic)
                 }
             }
+
+            return topicsToSubscribe
         }
-        
-        switch threshold {
-        case .eg0:
-            Messaging.messaging().subscribe(toTopic: NotifyThreshold.eg0.getTopicKey()) { error in
-                print("[FCM] Subscribed to [eg0] topic")
-            }
-            fallthrough
-        case .eg1:
-            Messaging.messaging().subscribe(toTopic: NotifyThreshold.eg1.getTopicKey()) { error in
-                print("[FCM] Subscribed to [eg1] topic")
-            }
-            fallthrough
-        case .eg2:
-            Messaging.messaging().subscribe(toTopic: NotifyThreshold.eg2.getTopicKey()) { error in
-                print("[FCM] Subscribed to [eg2] topic")
-            }
-            fallthrough
-        case .eg3:
-            Messaging.messaging().subscribe(toTopic: NotifyThreshold.eg3.getTopicKey()) { error in
-                print("[FCM] Subscribed to [eg3] topic")
-            }
-            fallthrough
-        case .eg4:
-            Messaging.messaging().subscribe(toTopic: NotifyThreshold.eg4.getTopicKey()) { error in
-                print("[FCM] Subscribed to [eg4] topic")
-            }
-        case .off:
-            Messaging.messaging().subscribe(toTopic: NotifyThreshold.off.getTopicKey()) { error in
-                print("[FCM] Subscribed to [off] topic")
+
+    private static var defaults = UserDefaults.standard
+
+        static func subscribe(to topic: String) {
+            if !isSubscribed(to: topic) {
+                // Perform the subscribe operation here.
+                Messaging.messaging().subscribe(toTopic: topic) { error in
+                    print("[FCM] Subscribed to [\(topic)] topic")
+                }
+                currentSubscribedTopics[topic] = true
+                saveSubscriptionStatus()
             }
         }
-    }
+
+        static func unsubscribe(from topic: String) {
+            if isSubscribed(to: topic) {
+                // Perform the unsubscribe operation here.
+                Messaging.messaging().unsubscribe(fromTopic: topic) { error in
+                    print("[FCM] Unsubscribed from [\(topic)] topic")
+                }
+                currentSubscribedTopics[topic] = nil
+                saveSubscriptionStatus()
+            }
+        }
+
+        static func isSubscribed(to topic: String) -> Bool {
+            return currentSubscribedTopics[topic] != nil
+        }
+
+        static func setNotifyMode(location: Location, threshold: NotifyThreshold) {
+            let newTopicKeys = generateTopicKeys(for: location, threshold: threshold)
+
+            // Unsubscribe from unnecessary topics
+            currentSubscribedTopics.keys.forEach { topic in
+                if !newTopicKeys.contains(topic) {
+                    unsubscribe(from: topic)
+                }
+            }
+
+            // Subscribe to new topics
+            newTopicKeys.forEach { topic in
+                subscribe(to: topic)
+            }
+        }
+
+
+        private static var currentSubscribedTopics: [String: Bool] {
+            get {
+                return defaults.dictionary(forKey: "subscribedTopics") as? [String: Bool] ?? [:]
+            }
+            set {
+                defaults.set(newValue, forKey: "subscribedTopics")
+            }
+        }
+
+        private static func saveSubscriptionStatus() {
+            currentSubscribedTopics = currentSubscribedTopics // Force saving to UserDefaults
+        }
+
 }

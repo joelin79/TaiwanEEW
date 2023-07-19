@@ -4,6 +4,7 @@
 "term2-string" = "The earthquake early warning system, based on rapid calculations from a few seismic stations, may differ from the final earthquake report. Please exercise caution when using it.";
 "term3-string" = "False alarms are possible. Please refrain from disseminating information, maintain public order, and ensure compliance with the law.";
 "term4-string" = "If you start using this software, it signifies your agreement to the aforementioned terms.";
+"scroll-string" = "(Scroll to read whole statement~)";
 "dismiss-string" = "Start";
 
 // About

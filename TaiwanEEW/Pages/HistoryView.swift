@@ -44,6 +44,7 @@ struct HistoryView: View{
                     }
                 }
             }.frame(width: UIScreen.screenWidth)
+                .padding(.bottom, 0.1)
         }
     }
 }

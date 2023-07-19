@@ -9,11 +9,13 @@ import Foundation
 import SwiftUI
 
 enum NotifyThreshold: String, CaseIterable, Identifiable, Codable {
-    case off, eg0, eg1, eg2, eg3, eg4
+    case /*test,*/ off, eg0, eg1, eg2, eg3, eg4
     var id: Self {self}
     
     func getDisplayName() -> LocalizedStringKey {
         switch self {
+//        case .test:
+//            return "test"
         case .off:
             return LocalizedStringKey("off-string")
         case .eg0:
@@ -31,5 +33,22 @@ enum NotifyThreshold: String, CaseIterable, Identifiable, Codable {
     
     func getTopicKey() -> String {
         self.rawValue
+    }
+    
+    func getIntValue() -> Int {
+        switch self {
+        case .eg0:
+            return 0
+        case .eg1:
+            return 1
+        case .eg2:
+            return 2
+        case .eg3:
+            return 3
+        case .eg4:
+            return 4
+        default:
+            return -1
+        }
     }
 }

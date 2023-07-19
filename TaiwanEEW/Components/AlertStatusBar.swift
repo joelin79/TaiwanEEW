@@ -41,7 +41,7 @@ struct AlertStatusBar : View {
             ).opacity(opacity)
             .onReceive(timer) { _ in
                 updateAlert()
-                print("[update] last arrival: \(arrivalTime.formatted())")
+//                print("[update] last arrival: \(arrivalTime.formatted())")
             }
             .onAppear {
                 updateAlert()

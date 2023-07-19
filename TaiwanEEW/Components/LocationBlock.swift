@@ -9,16 +9,6 @@ import SwiftUI
 
 struct LocationBlock: View {
     var subscribedLoc: Location
-    var locationCH = [
-        Location.taipei : LocalizedStringKey("taipei-string"),
-//        Location.hsinchu : LocalizedStringKey("hsinchu-string") ,
-//        Location.taichung : LocalizedStringKey("taichung-string") ,
-//        Location.kaohsiung : LocalizedStringKey("kaohsiung-string") ,
-//        Location.pingtung : LocalizedStringKey("pingtung-string") ,
-//        Location.taitung : LocalizedStringKey("taitung-string") ,
-//        Location.hualian : LocalizedStringKey("hualian-string") ,
-//        Location.yilan : LocalizedStringKey("yilan-sttring") ,
-    ]
     
     var body: some View {
         ZStack {
@@ -26,7 +16,7 @@ struct LocationBlock: View {
                 .frame(width: 100.0, height: 40.0)
                 .clipped()
                 .cornerRadius(15.0)
-            Text(locationCH[subscribedLoc]!)
+            Text(subscribedLoc.getDisplayName())
                 .foregroundColor(Color("Pad"))
                 .font(Font.system(size: 20, design: .default).weight(.medium))
         }
