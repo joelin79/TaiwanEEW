@@ -64,21 +64,32 @@
 "active-string" = "新警報";
 
 // Locations
+"keelung-string" = "基隆市";
 "taipei-string" = "台北市";
+"taoyuan-string" = "桃園市";
 "hsinchu-string" = "新竹市";
+"miaoli-string" = "苗栗県";
 "taichung-string" = "台中市";
+"changhua-string" = "彰化県";
+"yunlin-string" = "雲林県";
+"nantou-string" = "南投県";
+"chiayi-string" = "嘉義市";
+"tainan-string" = "台南市";
 "kaohsiung-string" = "高雄市";
-"pingtung-string" = "屏東県";
-"taitung-string" = "台東県";
-"hualian-string" = "花蓮県";
+"pingtung-city-string" = "屏東県（屏東市）";
+"pingtung-hengchun-string" = "屏東県（恒春鎮）";
 "yilan-string" = "宜蘭県";
+"hualian-city-string" = "花蓮県（花蓮市）";
+"hualian-yuli-string" = "花蓮県（玉里鎮）";
+"taitung-string" = "台東県";
+"penghu-string" = "澎湖県";
 
 // TimeRange
-"week-string" = "7 天";
-"twoweek-string" = "2 週";
-"month-string" = "1 月";
-"sixmonth-string" = "6 月";
-"year-string" = "1 年";
+"week-string" = "1週間";
+"twoweek-string" = "2週間";
+"month-string" = "1ヶ月";
+"sixmonth-string" = "6ヶ月";
+"year-string" = "1年間";
 "all-string" = "すべて表示";
 
 // NotifyThreshold

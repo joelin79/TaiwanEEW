@@ -63,17 +63,28 @@
 "active-string" = "New Alerts";
 
 // Locations
-"taipei-string" = "Taipei";
-"hsinchu-string" = "Hsinchu";
-"taichung-string" = "Taichung";
-"kaohsiung-string" = "Kaohsiung";
-"pingtung-string" = "Pingtung";
-"taitung-string" = "Taitung";
-"hualian-string" = "Hualian";
-"yilan-string" = "Yilan";
+"keelung-string" = "Keelung City";
+"taipei-string" = "Taipei City";
+"taoyuan-string" = "Taoyuan City";
+"hsinchu-string" = "Hsinchu City";
+"miaoli-string" = "Miaoli County";
+"taichung-string" = "Taichung City";
+"changhua-string" = "Changhua County";
+"yunlin-string" = "Yunlin County";
+"nantou-string" = "Nantou County";
+"chiayi-string" = "Chiayi City";
+"tainan-string" = "Tainan City";
+"kaohsiung-string" = "Kaohsiung City";
+"pingtung-city-string" = "Pingtung County (Pingtung City)";
+"pingtung-hengchun-string" = "Pingtung County (Hengchun Township)";
+"yilan-string" = "Yilan County";
+"hualian-city-string" = "Hualien County (Hualien City)";
+"hualian-yuli-string" = "Hualien County (Yuli Township)";
+"taitung-string" = "Taitung County";
+"penghu-string" = "Penghu County";
 
 // TimeRange
-"week-string" = "7 days";
+"week-string" = "1 week";
 "twoweek-string" = "2 weeks";
 "month-string" = "1 month";
 "sixmonth-string" = "6 months";
