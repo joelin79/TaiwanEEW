@@ -9,12 +9,40 @@ import SwiftUI
 
 struct ConnectionStatusButton: View {
     var body: some View {
-        positive
+        Text("hi")
     }
 }
 
-private extention ConnectionStatusView: View {
+private extension ConnectionStatusView {
     var positive: some View {
+        Form {
+            NavigationLink {
+                ConnectionStatusView()
+            } label: {
+                HStack {
+                    Circle().frame(width: 15)
+                        .foregroundColor(.green)
+                    Text("伺服器端異常")
+                    .font(Font.system(size: 20, design: .default).weight(.medium))
+                }
+            }
+        }
+    }
+    var negativeServer: some View {
+        Form {
+            NavigationLink {
+                ConnectionStatusView()
+            } label: {
+                HStack {
+                    Circle().frame(width: 15)
+                        .foregroundColor(.green)
+                    Text("伺服器端異常")
+                    .font(Font.system(size: 20, design: .default).weight(.medium))
+                }
+            }
+        }
+    }
+    var negativeConnection: some View {
         Form {
             NavigationLink {
                 ConnectionStatusView()
