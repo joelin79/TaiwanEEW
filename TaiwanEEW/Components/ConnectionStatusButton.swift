@@ -9,6 +9,12 @@ import SwiftUI
 
 struct ConnectionStatusButton: View {
     var body: some View {
+        positive
+    }
+}
+
+private extention ConnectionStatusView: View {
+    var positive: some View {
         Form {
             NavigationLink {
                 ConnectionStatusView()
