@@ -38,7 +38,7 @@
 "reminder-string" = "Inaccuracy and false alarms possible. Any information should be based on the official announcements from the Central Weather Bureau (CWB).";
 
 // notices
-"notice1-string" = "Currently supporting Taipei City only, development in progress!";
+"notice1-string" = "Notifications and monitoring will display the estimated seismic intensity and arrival time for the selected location.";
 
 // Status
 "loading-string" = "loading...";

@@ -31,7 +31,7 @@ struct SettingsView: View {
             NavigationView {
                 Form {
                     // Location Selection
-                    Section(header: Text("alerts-pref-string")){
+                    Section(header: Text("alerts-pref-string"), footer: Text("notice1-string")){
                         List {
                             Picker("location-pref-string", selection: $locSelection){
                                 ForEach(Location.allCases){ location in

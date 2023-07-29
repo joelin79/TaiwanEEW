@@ -39,7 +39,7 @@
 "reminder-string" = "速報可能誤報，任何資訊均以中央氣象局(CWB)發布之內容為準。";
 
 // notices
-"notice1-string" = "目前僅支援台北市，待伺服器升級後會加入其餘縣市警報功能。";
+"notice1-string" = "通知與監測將顯示選取地點的預估震度與抵達時間。";
 
 // AlertStatus
 "loading-string" = "載入中...";
