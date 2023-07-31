@@ -193,26 +193,26 @@ extension AppDelegate : UNUserNotificationCenterDelegate {
 
 // Topic subscription management
 class FCMManager {
-        private static func generateTopicKeys(for location: Location, threshold: NotifyThreshold) -> [String] {
-            var topicsToSubscribe: [String] = []
+    private static func generateTopicKeys(for location: Location, threshold: NotifyThreshold) -> [String] {
+        var topicsToSubscribe: [String] = []
 
-            switch threshold {
-            case .off:
-                topicsToSubscribe.append(threshold.getTopicKey())
+        switch threshold {
+        case .off:
+            topicsToSubscribe.append(threshold.getTopicKey())
 //            case .test:
 //                topicsToSubscribe.append(threshold.getTopicKey())
-            default:
-                let startIndex = threshold.getIntValue()
-                let endIndex = 4
-                let locationKey = location == .taipei ? "" : location.getTopicKey() // note taipei topics does not require location prefix.
-                for i in startIndex...endIndex {
-                    let topic = locationKey + "eg\(i)"
-                    topicsToSubscribe.append(topic)
-                }
+        default:
+            let startIndex = threshold.getIntValue()
+            let endIndex = 4
+            let locationKey = location == .taipei ? "" : location.getTopicKey() // note taipei topics does not require location prefix.
+            for i in startIndex...endIndex {
+                let topic = locationKey + "eg\(i)"
+                topicsToSubscribe.append(topic)
             }
-
-            return topicsToSubscribe
         }
+
+        return topicsToSubscribe
+    }
 
     private static var defaults = UserDefaults.standard
 

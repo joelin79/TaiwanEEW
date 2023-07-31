@@ -18,6 +18,7 @@ struct LocationBlock: View {
                 .cornerRadius(15.0)
             Text(subscribedLoc.getDisplayName())
                 .font(Font.system(size: 20, design: .default).weight(.medium))
+                .foregroundColor(Color(.systemGray6))
         }
         
     }

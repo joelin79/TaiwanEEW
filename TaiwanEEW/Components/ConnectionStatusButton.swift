@@ -9,11 +9,11 @@ import SwiftUI
 
 struct ConnectionStatusButton: View {
     var body: some View {
-        Text("hi")
+        VStack {
+            positive
+        }
     }
-}
 
-private extension ConnectionStatusView {
     var positive: some View {
         Form {
             NavigationLink {
