@@ -13,12 +13,12 @@ import SwiftUI
 
 class EventDispatcher: ObservableObject{
     @Published private(set) var event: [Event] = []
-    @Published private(set) var lastEventId = ""
+    @Published private(set) var ping: [Ping] = []
     @Published private(set) var arrivalTime: Date = Date(timeIntervalSince1970: 0)
     @Published private(set) var publishedTime: Date = Date(timeIntervalSince1970: 0)
     @Published private(set) var intensity: String = "0"
+    @Published private(set) var lastPingTime: Date = Date(timeIntervalSince1970: 0)
     let db = Firestore.firestore()
-    let pusher = NotificationManager()
     var subscribedLoc: Binding<Location>
     
     init(subscribedLoc: Binding<Location>) {
@@ -29,6 +29,7 @@ class EventDispatcher: ObservableObject{
     func getEvents(){
         
         // listening the collection of the selected location
+        // TODO: limit data read numbers
         db.collection(subscribedLoc.wrappedValue.getTopicKey()).addSnapshotListener { querySnapshot, error in
             
             // fetch documents into the "documents" array
@@ -57,6 +58,43 @@ class EventDispatcher: ObservableObject{
                 self.arrivalTime = arrivalTime
                 self.publishedTime = lastEvent.eventTime
                 self.intensity = lastEvent.intensity
+            }
+        }
+        
+        getPings()
+    }
+    
+    func getPings(){
+        
+        // listening the collection of the selected location
+        db.collection("ping")
+            .order(by: "pingTime", descending: true)
+            .limit(to: 2)
+            .addSnapshotListener { querySnapshot, error in
+            
+            // fetch documents into the "documents" array
+            guard let documents = querySnapshot?.documents else {
+                print("Error fetching Ping documents: \(String(describing: error))")
+                return
+            }
+            
+            // then decode documents into a compactMap of type Ping array, and store into event
+            self.ping = documents.compactMap { document -> Ping? in
+                do {
+                    return try document.data(as: Ping.self)
+                } catch {
+                    print("Error decoding document into Ping: \(error)")
+                    return nil
+                }
+            }
+            
+            // sort Ping by eventTime
+            self.ping.sort { $0.pingTime < $1.pingTime }
+            
+            // set variables
+            if let lastPing = self.ping.last
+            {
+                self.lastPingTime = lastPing.pingTime
             }
         }
     }

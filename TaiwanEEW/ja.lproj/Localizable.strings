@@ -29,7 +29,7 @@
 "history-time-range-string" = "履歴の表示";
 "notify-pref-string" = "プッシュ通知";
 "notify-threshold-string" = "警報";
-"notify-force-string" = "震度4以上の強い地震が発生すると警報が鳴ります。";
+"notify-force-string" = "通知の迅速な配信を確保するために、携帯電話の「非通知モード」の使用を避けてください。\n*震度4以上の強い地震が発生すると警報が鳴ります。";
 
 "about-title-string" = "アプリ情報";
 "version-string" = "バージョン";
@@ -79,8 +79,8 @@
 "pingtung-city-string" = "屏東県（屏東市）";
 "pingtung-hengchun-string" = "屏東県（恒春鎮）";
 "yilan-string" = "宜蘭県";
-"hualian-city-string" = "花蓮県（花蓮市）";
-"hualian-yuli-string" = "花蓮県（玉里鎮）";
+"hualien-city-string" = "花蓮県（花蓮市）";
+"hualien-yuli-string" = "花蓮県（玉里鎮）";
 "taitung-string" = "台東県";
 "penghu-string" = "澎湖県";
 
@@ -99,3 +99,12 @@
 "eg2-string" = "震度2(含)以上";
 "eg3-string" = "震度3(含)以上";
 "eg4-string" = "震度4(含)以上";
+
+"today-string" = "今日";
+"connected-string" = "接続済み";
+"server-err-string" = "サーバーエラー";
+"internet-err-string" = "ネット接続なし";
+
+"nav-alert-string" = "即時速報";
+"nav-history-string" = "予測履歴";
+"nav-settings-string" = "アラーム設定";

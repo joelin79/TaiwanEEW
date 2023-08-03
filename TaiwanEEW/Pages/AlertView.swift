@@ -18,6 +18,7 @@ struct AlertView: View {
     var publishedTime: Date {eventManager.publishedTime}
     var arrivalTime: Date {eventManager.arrivalTime}
     var intensity: String {eventManager.intensity}
+    var lastPingTime: Date {eventManager.lastPingTime}
     
     var dateFormatter: DateFormatter = {
         let formatter = DateFormatter()
@@ -27,7 +28,7 @@ struct AlertView: View {
     
     var body: some View {
         ZStack {
-            var color = (colorScheme == .dark ? Color.black : Color.white)
+            let color = (colorScheme == .dark ? Color.black : Color.white)
             
             Rectangle().foregroundColor(color)
             GeometryReader { reader in
@@ -52,11 +53,16 @@ private extension AlertView {
     
     var pageInfo: some View {
         Group {
-            LocationBlock(subscribedLoc: subscribedLoc).offset(x:UIScreen.baseLine, y:10)
+            
+            HStack {
+                LocationBlock(subscribedLoc: subscribedLoc).offset(x:UIScreen.baseLine)
+                Spacer()
+                ConnectionStatusButton(lastPingTime: lastPingTime)
+            }
             
             Group {
                 Text("alert-title-string").font(.largeTitle.bold())
-            }.offset(x:30)
+            }.offset(x: UIScreen.baseLine)
             Text("\(dateFormatter.string(from: publishedTime)) publish-string")
                 .padding(.bottom, 20.0)
                 .offset(x: UIScreen.baseLine, y:5)

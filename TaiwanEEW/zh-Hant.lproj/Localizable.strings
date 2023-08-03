@@ -29,7 +29,7 @@
 "history-time-range-string" = "歷史記錄顯示";
 "notify-pref-string" = "通知設定";
 "notify-threshold-string" = "預警震度";
-"notify-force-string" = "4級或以上強震一律推播警報。";
+"notify-force-string" = "避免使用手機勿擾模式，以利通知送達。\n＊4級或以上強震一律推播警報。";
 
 "about-title-string" = "關於本程式";
 "version-string" = "版本";
@@ -79,8 +79,8 @@
 "pingtung-city-string" = "屏東縣（屏東市）";
 "pingtung-hengchun-string" = "屏東縣（恆春鎮）";
 "yilan-string" = "宜蘭縣";
-"hualian-city-string" = "花蓮縣（花蓮市）";
-"hualian-yuli-string" = "花蓮縣（玉里鎮）";
+"hualien-city-string" = "花蓮縣（花蓮市）";
+"hualien-yuli-string" = "花蓮縣（玉里鎮）";
 "taitung-string" = "台東縣";
 "penghu-string" = "澎湖縣";
 
@@ -99,3 +99,12 @@
 "eg2-string" = "震度2(含)以上";
 "eg3-string" = "震度3(含)以上";
 "eg4-string" = "震度4(含)以上";
+
+"today-string" = "今天";
+"connected-string" = "已連線";
+"server-err-string" = "伺服器維護中";
+"internet-err-string" = "無網路連線";
+
+"nav-alert-string" = "即時警報";
+"nav-history-string" = "歷史";
+"nav-settings-string" = "設定";

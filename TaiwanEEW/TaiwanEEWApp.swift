@@ -44,11 +44,11 @@ struct TaiwanEEWApp: App {
                     AlertView(eventManager: EventDispatcher(subscribedLoc: $subscribedLoc), subscribedLoc: $subscribedLoc)
                         .environmentObject(sheetManager)
                         .tabItem {
-                            Label("Alert", systemImage: "exclamationmark.triangle")    // TODO: localization
+                            Label(LocalizedStringKey("nav-alert-string"), systemImage: "exclamationmark.triangle")    // TODO: localization
                         }
                     HistoryView(eventManager: EventDispatcher(subscribedLoc: $subscribedLoc), historyRange: $historyRange, subscribedLoc: $subscribedLoc)
                         .tabItem {
-                            Label("History", systemImage: "chart.bar.doc.horizontal")
+                            Label(LocalizedStringKey("nav-history-string"), systemImage: "chart.bar.doc.horizontal")
                         }
                     SettingsView(
                         onHistoryRangeChanged: { newValue in
@@ -61,7 +61,7 @@ struct TaiwanEEWApp: App {
                             FCMManager.setNotifyMode(location: subscribedLoc, threshold: notifyThreshold)
                         })
                     .tabItem {
-                        Label("Settings", systemImage: "gear")
+                        Label(LocalizedStringKey("nav-settings-string"), systemImage: "gear")
                     }
                 }
             }

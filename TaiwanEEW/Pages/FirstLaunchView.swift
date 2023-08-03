@@ -67,6 +67,7 @@ private extension FirstLaunchView {
             .font(
                 .system(size: 45, weight: .bold, design: .rounded))
             .padding(.top, 25)
+            .foregroundColor(.black)
     }
     
     // MARK: https://medium.com/@yeeedward/bullet-list-with-swiftui-7dfb7e3c30f1
@@ -81,10 +82,13 @@ private extension FirstLaunchView {
                             .font(.system(size: fontSize).bold())
                             .frame(width: bulletWidth,
                                    alignment: bulletAlignment)
+                            .foregroundColor(.black)
                         Text(listItems[idx])
                             .font(.system(size: fontSize))
                             .frame(maxWidth: .infinity,
                                    alignment: .leading)
+                            .foregroundColor(.black
+                            )
                     }
                 }
             }.padding(.top, 20)

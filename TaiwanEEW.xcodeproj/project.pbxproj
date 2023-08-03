@@ -19,6 +19,7 @@
 		C7423E672A36ABA2008B1020 /* NotificationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7423E662A36ABA2008B1020 /* NotificationManager.swift */; };
 		C75651782A73A1EE00645965 /* ConnectionStatusButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75651772A73A1EE00645965 /* ConnectionStatusButton.swift */; };
 		C756517A2A73A3CE00645965 /* ConnectionStatusView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C75651792A73A3CE00645965 /* ConnectionStatusView.swift */; };
+		C756517E2A778A4100645965 /* Ping.swift in Sources */ = {isa = PBXBuildFile; fileRef = C756517D2A778A4100645965 /* Ping.swift */; };
 		C766813F299BC98B00EE9D7C /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C766813E299BC98B00EE9D7C /* HistoryView.swift */; };
 		C7668141299C942800EE9D7C /* TestText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7668140299C942700EE9D7C /* TestText.swift */; };
 		C7668143299CDBBE00EE9D7C /* EventInfoBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7668142299CDBBE00EE9D7C /* EventInfoBlock.swift */; };
@@ -64,6 +65,7 @@
 		C7423E662A36ABA2008B1020 /* NotificationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationManager.swift; sourceTree = "<group>"; };
 		C75651772A73A1EE00645965 /* ConnectionStatusButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStatusButton.swift; sourceTree = "<group>"; };
 		C75651792A73A3CE00645965 /* ConnectionStatusView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionStatusView.swift; sourceTree = "<group>"; };
+		C756517D2A778A4100645965 /* Ping.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Ping.swift; sourceTree = "<group>"; };
 		C766813E299BC98B00EE9D7C /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		C7668140299C942700EE9D7C /* TestText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestText.swift; sourceTree = "<group>"; };
 		C7668142299CDBBE00EE9D7C /* EventInfoBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoBlock.swift; sourceTree = "<group>"; };
@@ -196,6 +198,7 @@
 		C775E0DC28AE64E100D34920 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				C756517D2A778A4100645965 /* Ping.swift */,
 				C775E0E728AF39E900D34920 /* Event.swift */,
 				C775E0E528AF36D000D34920 /* Location.swift */,
 				C7F8345F299E4B5E006E5953 /* EventError.swift */,
@@ -333,6 +336,7 @@
 				C756517A2A73A3CE00645965 /* ConnectionStatusView.swift in Sources */,
 				C7AEEE4129A0FDC3002471EF /* UIView.swift in Sources */,
 				C775E0D728AE637400D34920 /* TimeBlock.swift in Sources */,
+				C756517E2A778A4100645965 /* Ping.swift in Sources */,
 				C7CC14B72A0B8D4D00D91D56 /* TimeRange.swift in Sources */,
 				C73B52782A5EDE5A00CC63D6 /* TermsOfUseView.swift in Sources */,
 				C775E0E828AF39E900D34920 /* Event.swift in Sources */,
@@ -507,7 +511,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TaiwanEEW/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Taiwan EEW";
+				INFOPLIST_KEY_CFBundleDisplayName = "地震速報";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -545,7 +549,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = TaiwanEEW/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = "Taiwan EEW";
+				INFOPLIST_KEY_CFBundleDisplayName = "地震速報";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.weather";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
