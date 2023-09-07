@@ -23,6 +23,10 @@
 		C766813F299BC98B00EE9D7C /* HistoryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C766813E299BC98B00EE9D7C /* HistoryView.swift */; };
 		C7668141299C942800EE9D7C /* TestText.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7668140299C942700EE9D7C /* TestText.swift */; };
 		C7668143299CDBBE00EE9D7C /* EventInfoBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C7668142299CDBBE00EE9D7C /* EventInfoBlock.swift */; };
+		C76A3F9E2AA9C24700CF371D /* FirebaseAnalyticsSwift in Frameworks */ = {isa = PBXBuildFile; productRef = C76A3F9D2AA9C24700CF371D /* FirebaseAnalyticsSwift */; };
+		C76A3FA02AA9C25100CF371D /* AdSupport.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C76A3F9F2AA9C25100CF371D /* AdSupport.framework */; };
+		C76A3FA22AA9C26500CF371D /* FirebaseCrashlytics in Frameworks */ = {isa = PBXBuildFile; productRef = C76A3FA12AA9C26500CF371D /* FirebaseCrashlytics */; };
+		C76A3FA42AA9C2AC00CF371D /* AnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C76A3FA32AA9C2AC00CF371D /* AnalyticsManager.swift */; };
 		C770E6FD2A5C0E1D001962E2 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C770E6FC2A5C0E1D001962E2 /* GoogleService-Info.plist */; };
 		C770E6FF2A5C16B9001962E2 /* FirebaseAnalytics in Frameworks */ = {isa = PBXBuildFile; productRef = C770E6FE2A5C16B9001962E2 /* FirebaseAnalytics */; };
 		C775E0D528AE633300D34920 /* IntensityBlock.swift in Sources */ = {isa = PBXBuildFile; fileRef = C775E0D428AE633300D34920 /* IntensityBlock.swift */; };
@@ -69,6 +73,8 @@
 		C766813E299BC98B00EE9D7C /* HistoryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryView.swift; sourceTree = "<group>"; };
 		C7668140299C942700EE9D7C /* TestText.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestText.swift; sourceTree = "<group>"; };
 		C7668142299CDBBE00EE9D7C /* EventInfoBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventInfoBlock.swift; sourceTree = "<group>"; };
+		C76A3F9F2AA9C25100CF371D /* AdSupport.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AdSupport.framework; path = System/Library/Frameworks/AdSupport.framework; sourceTree = SDKROOT; };
+		C76A3FA32AA9C2AC00CF371D /* AnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnalyticsManager.swift; sourceTree = "<group>"; };
 		C770E6FC2A5C0E1D001962E2 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C775E0D428AE633300D34920 /* IntensityBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntensityBlock.swift; sourceTree = "<group>"; };
 		C775E0D628AE637400D34920 /* TimeBlock.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeBlock.swift; sourceTree = "<group>"; };
@@ -100,11 +106,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C76A3F9E2AA9C24700CF371D /* FirebaseAnalyticsSwift in Frameworks */,
 				C7CDE7242A31695E0032BEE0 /* FirebaseMessaging in Frameworks */,
 				0C43DFA9D773C19DBB232266 /* Pods_TaiwanEEW.framework in Frameworks */,
 				C775E0E228AE6EBE00D34920 /* FirebaseFirestore in Frameworks */,
 				C770E6FF2A5C16B9001962E2 /* FirebaseAnalytics in Frameworks */,
+				C76A3FA22AA9C26500CF371D /* FirebaseCrashlytics in Frameworks */,
 				C775E0E428AE6EBE00D34920 /* FirebaseFirestoreSwift in Frameworks */,
+				C76A3FA02AA9C25100CF371D /* AdSupport.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -123,6 +132,7 @@
 		8213E50693A0DB10A5FB9C39 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C76A3F9F2AA9C25100CF371D /* AdSupport.framework */,
 				F03BF61429D4C6DFC7E181A6 /* Pods_TaiwanEEW.framework */,
 			);
 			name = Frameworks;
@@ -154,6 +164,7 @@
 				C7CDE7222A31678A0032BEE0 /* Info.plist */,
 				C7423E662A36ABA2008B1020 /* NotificationManager.swift */,
 				B40038EF28743FAB0095D49F /* TaiwanEEWApp.swift */,
+				C76A3FA32AA9C2AC00CF371D /* AnalyticsManager.swift */,
 				C775E0DE28AE654700D34920 /* EventDispatcher.swift */,
 				C7AEEE4229A37837002471EF /* NetworkMonitor.swift */,
 				C7CDE7272A318DD50032BEE0 /* SheetManager.swift */,
@@ -244,6 +255,8 @@
 				C775E0E328AE6EBE00D34920 /* FirebaseFirestoreSwift */,
 				C7CDE7232A31695E0032BEE0 /* FirebaseMessaging */,
 				C770E6FE2A5C16B9001962E2 /* FirebaseAnalytics */,
+				C76A3F9D2AA9C24700CF371D /* FirebaseAnalyticsSwift */,
+				C76A3FA12AA9C26500CF371D /* FirebaseCrashlytics */,
 			);
 			productName = TaiwanEEW;
 			productReference = B40038EC28743FAB0095D49F /* TaiwanEEW.app */;
@@ -345,6 +358,7 @@
 				C7668141299C942800EE9D7C /* TestText.swift in Sources */,
 				C7F83462299E5374006E5953 /* LocationBlock.swift in Sources */,
 				C775E0DF28AE654700D34920 /* EventDispatcher.swift in Sources */,
+				C76A3FA42AA9C2AC00CF371D /* AnalyticsManager.swift in Sources */,
 				C7AEEE3F29A0F951002471EF /* AlertStatusBar.swift in Sources */,
 				C7AEEE4329A37837002471EF /* NetworkMonitor.swift in Sources */,
 				C7CDE7282A318DD50032BEE0 /* SheetManager.swift in Sources */,
@@ -608,6 +622,16 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		C76A3F9D2AA9C24700CF371D /* FirebaseAnalyticsSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C775E0E028AE6EBE00D34920 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseAnalyticsSwift;
+		};
+		C76A3FA12AA9C26500CF371D /* FirebaseCrashlytics */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C775E0E028AE6EBE00D34920 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
+			productName = FirebaseCrashlytics;
+		};
 		C770E6FE2A5C16B9001962E2 /* FirebaseAnalytics */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = C775E0E028AE6EBE00D34920 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;

@@ -30,7 +30,7 @@ class EventDispatcher: ObservableObject{
         
         // listening the collection of the selected location
         // TODO: limit data read numbers
-        db.collection(subscribedLoc.wrappedValue.getTopicKey()).addSnapshotListener { querySnapshot, error in
+        db.collection(subscribedLoc.wrappedValue.getTopicKey()).limit(to: 10).addSnapshotListener { querySnapshot, error in
             
             // fetch documents into the "documents" array
             guard let documents = querySnapshot?.documents else {
