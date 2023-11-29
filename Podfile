@@ -11,6 +11,7 @@ target 'TaiwanEEW' do
 pod 'FirebaseFirestore'
 pod 'FirebaseCore'
 pod 'Firebase/Messaging'
+pod ''
 
   
 end
