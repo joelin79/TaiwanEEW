@@ -109,8 +109,8 @@ class AppDelegate: NSObject, UIApplicationDelegate {
         if #available(iOS 10.0, *) {
           // For iOS 10 display notification (sent via APNS)
           UNUserNotificationCenter.current().delegate = self
-
-          let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound]
+          // Notification Authorization
+          let authOptions: UNAuthorizationOptions = [.alert, .badge, .sound, .criticalAlert]
           UNUserNotificationCenter.current().requestAuthorization(
             options: authOptions,
             completionHandler: {_, _ in })
