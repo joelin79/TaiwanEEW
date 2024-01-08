@@ -199,8 +199,8 @@ class FCMManager {
         switch threshold {
         case .off:
             topicsToSubscribe.append(threshold.getTopicKey())
-//            case .test:
-//                topicsToSubscribe.append(threshold.getTopicKey())
+        case .test:
+            topicsToSubscribe.append("test")
         default:
             let startIndex = threshold.getIntValue()
             let endIndex = 4
