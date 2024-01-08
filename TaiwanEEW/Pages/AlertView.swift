@@ -46,6 +46,9 @@ struct AlertView: View {
                 Spacer()
             }
         }
+        .analyticsScreen(name: "AlertView", extraParameters: [
+            "watch_location" : subscribedLoc.getTopicKey()
+        ])
     }
 }
 
