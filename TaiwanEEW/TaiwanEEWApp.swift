@@ -245,6 +245,11 @@ class FCMManager {
         }
 
         static func setNotifyMode(location: Location, threshold: NotifyThreshold) {
+            
+            // Set user property for Analytics
+            AnalysicsManager.shared.setUserProperty(value: location.getTopicKey(), property: "subscribedLoc")
+            AnalysicsManager.shared.setUserProperty(value: threshold.getTopicKey(), property: "notifyThreshold")
+            
             let newTopicKeys = generateTopicKeys(for: location, threshold: threshold)
 
             // Unsubscribe from unnecessary topics
