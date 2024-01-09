@@ -11,11 +11,13 @@ import SwiftUI
 // TODO: Server support for more locations
 enum Location: String, CaseIterable, Identifiable, Codable{
 //    case keelung, taipei, taoyuan, hsinchu, miaoli, taichung, changhua, yunlin, nantou, chiayi, tainan, kaohsiung, pingtungCity, pingtungHengchun, yilan, hualienCity, hualienYuli, taitung, penghu
-    case taipei, hsinchu, taichung, chiayi, tainan, kaohsiung, yilan, hualienCity
+    case test /* MARK: Debug */, taipei, hsinchu, taichung, chiayi, tainan, kaohsiung, yilan, hualienCity
     var id: Self { self }
     
     func getDisplayName() -> LocalizedStringKey {
         switch self {
+        case .test: /* MARK: Debug */
+            return "test" /* MARK: Debug */
 //        case .keelung:
 //            return LocalizedStringKey("keelung-string")
         case .taipei:

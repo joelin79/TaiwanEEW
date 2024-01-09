@@ -199,9 +199,11 @@ class FCMManager {
         switch threshold {
         case .off:
             topicsToSubscribe.append(threshold.getTopicKey())
-        case .test:
-            topicsToSubscribe.append("test")
         default:
+            if (location.rawValue == "test") {                // test topic -> only "test" no egx append
+                topicsToSubscribe.append("test")
+                break;
+            }
             let startIndex = threshold.getIntValue()
             let endIndex = 4
             let locationKey = location == .taipei ? "" : location.getTopicKey() // note taipei topics does not require location prefix.
