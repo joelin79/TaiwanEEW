@@ -1,6 +1,6 @@
 // Terms of Use
 "term-title-string" = "Disclaimer";
-"term1-string" = "〔Earthquakes are unpredictable〕 Any information should be based on the official announcements from the Central Weather Bureau (CWB).";
+"term1-string" = "〔Earthquakes are unpredictable〕 Any information should be based on the official announcements from the Central Weather Association (CWA).";
 "term2-string" = "The earthquake early warning system, based on rapid calculations from a few seismic stations, may differ from the final earthquake report. Please exercise caution when using it.";
 "term3-string" = "False alarms are possible. Please refrain from disseminating information, maintain public order, and ensure compliance with the law.";
 "term4-string" = "If you start using this software, it signifies your agreement to the aforementioned terms.";
@@ -11,7 +11,7 @@
 "mechanics-title-string" = "About earthquake early warnings";
 "mechanics-string" = "Earthquake early warnings are detected by the CWB, using shock waves detected by few seismic stations near the epicenter to  calculate the epicentral location, depth, scale and other earthquake information. If the earthquake's \"estimated magnitude reaches 4.5 and the maximum estimated intensity reaches 3\", an alarm will be issued immediately. (National PWS alerts are issued only for quakes with at least magnitude of 5.0 and the local intensity of 4.) Based on current technology, an earthquake that occurs on Taiwan Island can issue an alert within 20 seconds after the earthquake on average. The blind zone is about 70 kilometers, which represents the distance from the epicenter People within 70 kilometers will receive an alert only after they feel the shaking of the earthquake, and people outside the blind zone will have an early warning time of several seconds to tens of seconds.";
 "sources-title-string" = "Special thanks／Sources";
-"sources-string" = "「地牛 Wake Up」、Central Weather Bereau (中央氣象局)";
+"sources-string" = "「地牛 Wake Up」、Central Weather Association (中央氣象署)";
 
 // Alert Page
 "alert-title-string" = "Earthquake Watch";
@@ -35,7 +35,7 @@
 "view-official-history-string" = "View complete warning history";
 "information-title-string" = "About earthquake early warnings";
 "reminder-title-string" = "Reminder:";
-"reminder-string" = "Inaccuracy and false alarms possible. Any information should be based on the official announcements from the Central Weather Bureau (CWB).";
+"reminder-string" = "Inaccuracy and false alarms possible. Any information should be based on the official announcements from the Central Weather Association (CWA).";
 
 // notices
 "notice1-string" = "Notifications and monitoring will display the estimated seismic intensity and arrival time for the selected location.";
